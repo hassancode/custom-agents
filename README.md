@@ -9,10 +9,11 @@ A simple AI agent built with the [OpenAI Agents SDK](https://github.com/openai/o
    uv sync
    ```
 
-2. Create a `.env` file with your OpenAI API key:
+2. Copy `.env.example` to `.env` and add your OpenAI API key:
+   ```bash
+   cp .env.example .env
    ```
-   OPENAI_API_KEY=your-api-key-here
-   ```
+   Then edit `.env` and replace `your-api-key-here` with your actual key.
 
 ## Usage
 
