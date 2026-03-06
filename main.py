@@ -1,17 +1,29 @@
 from dotenv import load_dotenv
-from agents import Agent, Runner
+
+import content_agent
+import context_object
+import function_tool
+import math_agent
+import starter_agent
 
 load_dotenv()
 
-agent = Agent(
-    name="My Agent",
-    instructions="You are a helpful assistant that can answer questions.",
-    model="gpt-4o-mini"
-)
+AGENT = 5  # 1: starter_agent, 2: math_agent, 3: function_tool, 4: context_object, 5: content_agent
+
 
 def main():
-    result = Runner.run_sync(agent, "What is the capital of France?")
-    print(result.final_output)
+    if AGENT == 1:
+        starter_agent.main()
+    elif AGENT == 2:
+        math_agent.main()
+    elif AGENT == 3:
+        function_tool.main()
+    elif AGENT == 4:
+        context_object.main()
+    elif AGENT == 5:
+        content_agent.main()
+
 
 if __name__ == "__main__":
     main()
+
